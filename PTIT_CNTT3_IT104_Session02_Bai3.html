@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function typeConsole(name) {
+            if (name === "log") {
+                return "Day la type:log";
+            } else if (name === "warn") {
+                return "Day la type:warn";
+            } else if (name === "error") {
+                return "Day la type:error";
+            } else if (name === "") {
+                return "Day la type:log";
+            }
+        }
+        
+        console.log(typeConsole("log")); 
+        
+        console.log(typeConsole("warn")); 
+        console.log(typeConsole("error")); 
+        console.log(typeConsole("")); 
+    </script>
+</body>
+</html>
