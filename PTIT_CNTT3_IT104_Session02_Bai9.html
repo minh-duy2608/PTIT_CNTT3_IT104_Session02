@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function getStudentSummary(student) {
+        const { name, age, listSubject } = student;
+
+        const totalScore = listSubject.reduce((sum, sub) => sum + sub.score, 0);
+        const averageScore = totalScore / listSubject.length;
+
+        const bestSubject = listSubject.reduce((max, current) =>
+          max.score > current.score ? max : current
+        );
+        const weakestSubject = listSubject.reduce((min, current) =>
+          min.score < current.score ? min : current
+        );
+
+        let rank;
+        if (averageScore >= 8.5) rank = "Học sinh giỏi";
+        else if (averageScore >= 7) rank = "Học sinh khá";
+        else if (averageScore >= 5) rank = "Học sinh trung bình";
+        else rank = "Học sinh yếu";
+
+        console.log(`${name} is ${age} years old.`);
+        console.log(`Average score: ${averageScore.toFixed(1)} - ${rank}`);
+        console.log(
+          `Best subject: ${bestSubject.subject} (${bestSubject.score})`
+        );
+        console.log(
+          `Weakest subject: ${weakestSubject.subject} (${weakestSubject.score})`
+        );
+      }
+    </script>
+  </body>
+</html>
